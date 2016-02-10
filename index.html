@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Proyecto Uno: Ejemplo</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+<div ng-app="proyectoUno" ng-controller="ProyectoUnoController">
+    <div class="col-md-12">
+        <div class="page-header text-center">
+            <h1>Cookies</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>Agregar cookie</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form name="cookieForm">
+                            <div class="form-group">
+                                <label for="nombre">Nombre del cookie</label>
+                                <input type="text" ng-model="cookie.nombre" id="nombre" class="form-control"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="valor">Valor del cookie</label>
+                                <input type="text" ng-model="cookie.valor" id="valor" class="form-control"/>
+                            </div>
+                            <p class="btn-group btn-group-justified">
+                                <a class="btn btn-primary" ng-click="agregar()">Agregar</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>Leer cookie</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form name="cookieForm">
+                            <div class="form-group">
+                                <label for="cookieNombreLeer">Nombre del cookie</label>
+                                <input type="text" ng-model="cookieNombreLeer" id="cookieNombreLeer" class="form-control"/>
+                            </div>
+                            <p class="btn-group btn-group-justified">
+                                <a class="btn btn-info" ng-click="leer()">Uno</a>
+                                <a class="btn btn-info" ng-click="leerTodos()">Todos</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>Remover cookie</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form name="cookieForm">
+                            <div class="form-group">
+                                <label for="cookieNombreBorrar">Nombre del cookie</label>
+                                <input type="text" ng-model="cookieNombreBorrar" id="cookieNombreBorrar" class="form-control"/>
+                            </div>
+                            <p class="btn-group btn-group-justified">
+                                <a class="btn btn-warning" ng-click="remover()">Remover</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-md-offset-4">
+            <pre>{{cookies}}</pre>
+        </div>
+
+
+    </div>
+</div>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-cookies.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
